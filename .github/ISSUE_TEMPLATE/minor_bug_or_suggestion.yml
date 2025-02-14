@@ -1,0 +1,64 @@
+name: Minor Bug / Suggestion
+description: Report a minor bug, UI issue, or suggestion
+title: "[Enhancement]: "
+labels: [enhancement, discussion]
+assignees: []
+
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "📌 Title"
+      description: "Provide a concise title summarizing the issue or suggestion."
+      placeholder: "E.g., 'Buttons misaligned on home screen'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observation
+    attributes:
+      label: "🔍 Observation"
+      description: "Describe what you noticed."
+      placeholder: "E.g., Text elements are overlapping in the settings page."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: "💡 Suggested Solution"
+      description: "Provide a possible fix or improvement."
+      placeholder: "E.g., Add padding between elements."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_questions
+    attributes:
+      label: "❓ Additional Questions"
+      description: "Ask anything relevant to the team."
+      placeholder: "E.g., Should we use a new font for better readability?"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "📌 Priority"
+      description: "How important is this issue?"
+      options:
+        - Low
+        - Normal
+        - High
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "📸 Screenshot (if applicable)"
+      description: "Attach a screenshot showing the issue."
+
+  - type: textarea
+    id: video
+    attributes:
+      label: "🎥 Video (if possible)"
+      description: "Attach a video demonstrating the issue."

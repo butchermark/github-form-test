@@ -1,50 +1,54 @@
-name: Bug Report
-description: Report a bug or unexpected behavior in the mobile app
+name: Major Bug Report
+description: Report a critical bug affecting functionality
 title: "[Bug]: "
-labels: [bug, needs-triage]
+labels: [bug, urgent]
 assignees: []
 
 body:
-  - type: markdown
-    attributes:
-      value: "### 📢 **Before submitting, please check if the issue already exists.**"
-
   - type: input
-    id: app_version
+    id: title
     attributes:
-      label: "📌 App Version"
-      description: "Which version of the app are you using?"
-      placeholder: "e.g., 1.2.3"
+      label: "📌 Title"
+      description: "Provide a concise title summarizing the issue."
+      placeholder: "E.g., 'Login button unresponsive on Android'"
     validations:
       required: true
 
   - type: dropdown
-    id: platform
+    id: severity
     attributes:
-      label: "📱 Platform"
-      description: "Which platform are you experiencing the issue on?"
+      label: "⚠ Issue Severity"
+      description: "How critical is this issue?"
       options:
-        - iOS
-        - Android
-        - Both
+        - Urgent
+        - High
+        - Normal
+        - Low
     validations:
       required: true
 
   - type: input
-    id: os_version
+    id: related_issue
     attributes:
-      label: "🛠 OS Version"
-      description: "Which version of iOS or Android are you using?"
-      placeholder: "e.g., iOS 17.3, Android 14"
+      label: "🔗 Related Issue (if any)"
+      description: "Reference any related issues by number."
+      placeholder: "E.g., #995"
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "✅ Expected Behavior"
+      description: "What was the user trying to do?"
+      placeholder: "E.g., The login button should navigate to the dashboard."
     validations:
       required: true
 
   - type: textarea
-    id: issue_description
+    id: obstacle
     attributes:
-      label: "🐛 Describe the Issue"
-      description: "Provide a clear and concise description of the issue."
-      placeholder: "When I tap the login button, nothing happens..."
+      label: "🚧 Obstacle"
+      description: "What prevented the user from achieving their goal?"
+      placeholder: "E.g., The login button does not respond."
     validations:
       required: true
 
@@ -52,54 +56,87 @@ body:
     id: steps_to_reproduce
     attributes:
       label: "🔄 Steps to Reproduce"
-      description: "How can we reproduce the issue?"
+      description: "Describe the steps to trigger the issue."
       placeholder: |
-        1. Open the app
-        2. Tap on 'Login'
-        3. Enter credentials and tap 'Sign In'
-        4. Observe the issue
+        1. Tap 'Login'
+        2. Enter credentials
+        3. Tap 'Sign In'
+        4. Observe issue
+    validations:
+      required: true
+
+  - type: input
+    id: android_ios_version
+    attributes:
+      label: "📱 Android/iOS Version"
+      description: "Specify the OS version."
+      placeholder: "E.g., Android 34, iOS 18"
+    validations:
+      required: true
+
+  - type: input
+    id: app_version
+    attributes:
+      label: "📌 App Version"
+      description: "Specify the app version."
+      placeholder: "E.g., 2.28.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: build_version
+    attributes:
+      label: "🛠 App Build Version"
+      description: "Select the environment where the issue occurred."
+      options:
+        - DEV
+        - TEST
+        - PROD
     validations:
       required: true
 
   - type: textarea
-    id: expected_behavior
+    id: log_data
     attributes:
-      label: "✅ Expected Behavior"
-      description: "What did you expect to happen?"
-      placeholder: "I expected to be logged in and redirected to the home screen."
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual_behavior
-    attributes:
-      label: "❌ Actual Behavior"
-      description: "What actually happened?"
-      placeholder: "After tapping login, the button becomes unresponsive."
-    validations:
-      required: true
-
-  - type: textarea
-    id: logs
-    attributes:
-      label: "📜 Logs & Crash Reports (if applicable)"
-      description: "Paste any relevant logs or crash reports."
+      label: "📜 Received Logs"
+      description: "Paste any relevant logs from debugging."
       placeholder: "Attach log output here"
       render: shell
 
   - type: textarea
-    id: additional_context
+    id: qr_code
     attributes:
-      label: "📎 Additional Context"
-      description: "Any additional information, screenshots, or recordings?"
-      placeholder: "If applicable, add screenshots here."
+      label: "🔑 QR Code for User Login"
+      description: "Attach the QR code for debugging login access."
 
-  - type: checkboxes
-    id: confirmation
+  - type: input
+    id: test_group
     attributes:
-      label: "✅ Checklist"
-      options:
-        - label: "I have searched for existing issues before submitting this."
-          required: true
-        - label: "I have updated the app to the latest version."
-        - label: "I have tried clearing the cache and restarting the app."
+      label: "🧪 Reproducing Test Group Name"
+      description: "Who identified this bug?"
+      placeholder: "E.g., Test Group"
+    validations:
+      required: true
+
+  - type: input
+    id: test_user
+    attributes:
+      label: "👤 Reproducing User Name"
+      description: "Who encountered this issue?"
+      placeholder: "E.g., Test Elek"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "📸 Screenshot (Required)"
+      description: "Attach a screenshot showing the bug."
+    validations:
+      required: true
+
+  - type: textarea
+    id: video
+    attributes:
+      label: "🎥 Video (if possible)"
+      description: "Attach a video showing how to reproduce the bug."
