@@ -1,6 +1,6 @@
-name: Bug Report
-description: Report a bug
-labels: ["bug"]
+name: Teszt bug report
+description: teszt bug report
+labels: ["bogar", "bug"]
 body:
   - type: markdown
     attributes:
