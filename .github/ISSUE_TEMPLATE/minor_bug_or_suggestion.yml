@@ -1,64 +1,64 @@
-name: Minor Bug / Suggestion
-description: Report a minor bug, UI issue, or suggestion
-title: "[Enhancement]: "
-labels: [enhancement, discussion]
+name: Kisebb Hiba / Javaslat
+description: Jelents egy kisebb hibát, UI problémát vagy javaslatot
+title: "[Fejlesztés]: "
+labels: [fejlesztés, megbeszélés]
 assignees: []
 
 body:
   - type: input
     id: title
     attributes:
-      label: "📌 Title"
-      description: "Provide a concise title summarizing the issue or suggestion."
-      placeholder: "E.g., 'Buttons misaligned on home screen'"
+      label: "📌 Cím"
+      description: "Adj meg egy tömör címet, amely összefoglalja a problémát vagy javaslatot."
+      placeholder: "Pl.: 'A gombok elcsúsztak a kezdőképernyőn'"
     validations:
       required: true
 
   - type: textarea
     id: observation
     attributes:
-      label: "🔍 Observation"
-      description: "Describe what you noticed."
-      placeholder: "E.g., Text elements are overlapping in the settings page."
+      label: "🔍 Megfigyelés"
+      description: "Írd le, mit vettél észre."
+      placeholder: "Pl.: A szöveges elemek egymásra csúsznak a beállítások oldalon."
     validations:
       required: true
 
   - type: textarea
     id: suggestion
     attributes:
-      label: "💡 Suggested Solution"
-      description: "Provide a possible fix or improvement."
-      placeholder: "E.g., Add padding between elements."
+      label: "💡 Javasolt Megoldás"
+      description: "Adj meg egy lehetséges javítást vagy fejlesztést."
+      placeholder: "Pl.: Adjunk hozzá térközt az elemek között."
     validations:
       required: true
 
   - type: textarea
     id: additional_questions
     attributes:
-      label: "❓ Additional Questions"
-      description: "Ask anything relevant to the team."
-      placeholder: "E.g., Should we use a new font for better readability?"
+      label: "❓ További Kérdések"
+      description: "Tegyél fel bármilyen releváns kérdést a csapat számára."
+      placeholder: "Pl.: Használjunk új betűtípust a jobb olvashatóság érdekében?"
 
   - type: dropdown
     id: priority
     attributes:
-      label: "📌 Priority"
-      description: "How important is this issue?"
+      label: "📌 Prioritás"
+      description: "Mennyire fontos ez a probléma?"
       options:
-        - Low
-        - Normal
-        - High
+        - Alacsony
+        - Normál
+        - Magas
     validations:
       required: true
 
   - type: textarea
     id: screenshot
     attributes:
-      label: "📸 Screenshot (if applicable)"
-      description: "Attach a screenshot showing the issue."
+      label: "📸 Képernyőkép (ha van)"
+      description: "Csatolj egy képernyőképet a problémáról."
 
   - type: textarea
     id: video
     attributes:
-      label: "🎥 Video (if possible)"
-      description: "Attach a video demonstrating the issue."
+      label: "🎥 Videó (ha lehetséges)"
+      description: "Csatolj egy videót, amely bemutatja a problémát."

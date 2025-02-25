@@ -1,0 +1,142 @@
+name: Súlyos Hibajelentés
+description: Kritikus hiba bejelentése, amely befolyásolja a funkcionalitást
+title: "[Hiba]: "
+labels: [hiba, sürgős]
+assignees: []
+
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "📌 Cím"
+      description: "Adj meg egy tömör címet, amely összefoglalja a problémát."
+      placeholder: "Pl.: 'A bejelentkezés gomb nem reagál Androidon'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "⚠ Hiba Súlyossága"
+      description: "Mennyire kritikus ez a probléma?"
+      options:
+        - Sürgős
+        - Magas
+        - Normál
+        - Alacsony
+    validations:
+      required: true
+
+  - type: input
+    id: related_issue
+    attributes:
+      label: "🔗 Kapcsolódó Hibajegy (ha van)"
+      description: "Hivatkozz bármilyen kapcsolódó hibajegyre szám alapján."
+      placeholder: "Pl.: #995"
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "✅ Elvárt Viselkedés"
+      description: "Mit próbált a felhasználó elérni?"
+      placeholder: "Pl.: A bejelentkezés gombnak át kellene navigálnia a vezérlőpultra."
+    validations:
+      required: true
+
+  - type: textarea
+    id: obstacle
+    attributes:
+      label: "🚧 Akadály"
+      description: "Mi akadályozta meg a felhasználót abban, hogy elérje a célját?"
+      placeholder: "Pl.: A bejelentkezés gomb nem reagál."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: "🔄 A Hiba Előidézésének Lépései"
+      description: "Írd le a lépéseket, amelyek kiváltják a problémát."
+      placeholder: |
+        1. Koppints a 'Bejelentkezés' gombra
+        2. Add meg a hitelesítő adatokat
+        3. Koppints a 'Belépés' gombra
+        4. Figyeld meg a hibát
+    validations:
+      required: true
+
+  - type: input
+    id: android_ios_version
+    attributes:
+      label: "📱 Android/iOS Verzió"
+      description: "Add meg az operációs rendszer verzióját."
+      placeholder: "Pl.: Android 34, iOS 18"
+    validations:
+      required: true
+
+  - type: input
+    id: app_version
+    attributes:
+      label: "📌 Alkalmazás Verzió"
+      description: "Add meg az alkalmazás verzióját."
+      placeholder: "Pl.: 2.28.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: build_version
+    attributes:
+      label: "🛠 Alkalmazás Build Verzió"
+      description: "Válaszd ki azt a környezetet, ahol a hiba jelentkezett."
+      options:
+        - FEJLESZTÉS (DEV)
+        - TESZT (TEST)
+        - ÉLES (PROD)
+    validations:
+      required: true
+
+  - type: textarea
+    id: log_data
+    attributes:
+      label: "📜 Naplóadatok"
+      description: "Illessz be bármilyen releváns naplóadatot a hibakeresésből."
+      placeholder: "Ide illesztheted be a naplókimenetet"
+      render: shell
+
+  - type: textarea
+    id: qr_code
+    attributes:
+      label: "🔑 QR-kód a Bejelentkezéshez"
+      description: "Csatold a QR-kódot a bejelentkezés hibakereséséhez."
+
+  - type: input
+    id: test_group
+    attributes:
+      label: "🧪 Tesztcsoport"
+      description: "Ki azonosította ezt a hibát?"
+      placeholder: "Pl.: Tesztcsoport"
+    validations:
+      required: true
+
+  - type: input
+    id: test_user
+    attributes:
+      label: "👤 Tesztelő Felhasználó"
+      description: "Ki találkozott ezzel a hibával?"
+      placeholder: "Pl.: Teszt Elek"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "📸 Képernyőkép (Kötelező)"
+      description: "Csatolj egy képernyőképet, amely bemutatja a hibát."
+    validations:
+      required: true
+
+  - type: textarea
+    id: video
+    attributes:
+      label: "🎥 Videó (ha lehetséges)"
+      description: "Csatolj egy videót, amely bemutatja, hogyan lehet előidézni a hibát."
